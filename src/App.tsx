@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import HeaderComponent from './component/HeaderComponent';
+// import HeaderComponent from './component/HeaderComponent';
 import EditIterenary from './screen/EditIterenary';
 import NewTrip from './screen/NewTrip';
 
@@ -14,7 +14,6 @@ function App() {
   <>
     <CssBaseline />
     <Box maxWidth="xl">
-    <HeaderComponent />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<NewTrip />} />
