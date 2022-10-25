@@ -5,5 +5,31 @@
 }
 html, body{
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+
+.dynamicInputs{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  padding-right: 2px;
+}
+
+.dynamicInputs > input{
+  height: 32px;
+  width: 92%;
+  border: none;
+  padding: 0 6px;
+}
+.dynamicInputs > input:active{
+  border: none;
+}
+.dynamicInputs > input:focus{
+  border: none;
 }

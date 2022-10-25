@@ -2,12 +2,21 @@ import React from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button';
 import { TextInputField } from 'evergreen-ui'
+import { useNavigate } from 'react-router-dom';
 
 // icons
 
 // import {IoLocationSharp} from 'react-icons/io5'
 
-const TripPlanningForm = () => {
+type tripPlanType = {
+  routeTo : string,
+}
+
+const TripPlanningForm = ({routeTo}: tripPlanType) => {
+  let navigate = useNavigate();
+  const handeRoute = () => {
+    navigate(routeTo)
+  }
   return (
     <Box component="form" sx={{display: 'flex', flexDirection:'column', justifyContent:'center', alignItems: 'space-between', pl:2,pr:2}}>
            <Box >
@@ -68,7 +77,7 @@ const TripPlanningForm = () => {
               />
            </Box>
            <Box sx={{ '& button': { ml: 20 } }}>
-            <Button variant="contained" size="large">
+            <Button variant="contained" size="large" onClick={handeRoute}>
               Create New Itinerary
             </Button>
            </Box>
