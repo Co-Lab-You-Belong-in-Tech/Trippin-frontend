@@ -7,6 +7,7 @@ import EditInputController from '../component/EditInputController';
 import EditMapDisplay from '../component/EditMapDisplay';
 import TransitionsModal from '../component/ModalCoponent';
 
+
 const EditIterenary = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
