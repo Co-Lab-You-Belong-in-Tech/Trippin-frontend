@@ -8,7 +8,12 @@ import { Img } from './ImageComponent';
 import Logo from '../assets/final.png';
 import Avatar from '../assets/icons/Shape.png'
 
-const EditHeader = () => {
+type porpsType = {
+    open: boolean,
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>,
+    handleOpen: any
+}
+const EditHeader = ({open, setOpen, handleOpen}: porpsType) => {
   return (
     <Paper elevation={0} sx={{position:"static",
     zIndex: 10}}>
@@ -25,7 +30,7 @@ const EditHeader = () => {
                             <Box sx={{width:'6px', height:'6px', backgroundColor:' #52BD94', borderRadius:10}}></Box>
                             <Box component="span" sx={{fontSize:'16px', fontWeight:400}}>Editing</Box>
                         </Box>
-                        <Button variant="contained" sx={{display:'flex',alignItems:'center', backgroundColor:'#572297', borderRadius:1, color: "#fff", textTransform:'capitalize', fontFamily:'Montserrat', fontWeight:600, fontStyle:'normal', fontSize:'16px'}}>Save</Button>
+                        <Button variant="contained" sx={{display:'flex',alignItems:'center', backgroundColor:'#572297', borderRadius:1, color: "#fff", textTransform:'capitalize', fontFamily:'Montserrat', fontWeight:600, fontStyle:'normal', fontSize:'16px'}} onClick={handleOpen}>Save</Button>
                         <Box sx={{width:'44px', height:'44px', backgroundColor:'#CAD5F3', borderRadius:5, display:'flex', alignItems:'center', justifyContent:'center'}}>
                             <Img alt='avatar' src={Avatar}/>
                         </Box>
