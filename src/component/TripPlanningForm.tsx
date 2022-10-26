@@ -71,7 +71,6 @@ const TripPlanningForm = ({routeTo}: tripPlanType) => {
                 id="invite"
                 label="Invite your travel buddies"
                 inputHeight={40}
-                required
                 description="To invite more than one person please separete email accounts using a ;"
                 placeholder="johndoe@gmail.com; janedoe@gmail.com"
               />
