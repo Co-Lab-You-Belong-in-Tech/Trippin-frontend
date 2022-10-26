@@ -5,11 +5,17 @@ import EditHeader from '../component/EditHeader';
 import EditBannerComponent from '../component/EditBannerComponent';
 import EditInputController from '../component/EditInputController';
 import EditMapDisplay from '../component/EditMapDisplay';
+import TransitionsModal from '../component/ModalCoponent';
 
 const EditIterenary = () => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
   return (
     <Box sx={{}}>
-      <EditHeader />
+      {
+        open && <TransitionsModal open={open} setOpen={setOpen} />
+      }
+      <EditHeader open={open} setOpen={setOpen} handleOpen={handleOpen}/>
       <EditBannerComponent />
       <Box>
         <Box sx={{display:"flex", alignItems:"center", width:'50%', textAlign:'left',ml:12, mb:4, mt:6}}>
