@@ -77,7 +77,7 @@ const TripPlanningForm = ({routeTo}: tripPlanType) => {
               />
            </Box>
            <Box sx={{ '& button': { ml: 20 } }}>
-            <Button variant="contained" size="large" onClick={handeRoute}>
+            <Button variant="contained" size="large">
               Create New Itinerary
             </Button>
            </Box>
