@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -8,11 +10,16 @@ html, body{
   /* overflow: hidden; */
   -ms-overflow-style: none;
   scrollbar-width: none;
+  font-family: 'Montserrat';
 }
 body::-webkit-scrollbar{
   display: none;
 }
-
+/* custom styles */
+.customBtn{
+  font-family: 'Montserrat';
+}
+/* custom styles ends */
 .dynamicInputs{
   display: flex;
   justify-content: space-between;
@@ -22,17 +29,15 @@ body::-webkit-scrollbar{
 }
 
 .dynamicInputs > input{
-  height: 32px;
+  height: 45px;
   width: 92%;
   border: none;
   padding: 0 6px;
+  outline: none;
+  font-size: 17px;
 }
-.dynamicInputs > input:active{
-  border: none;
-}
-.dynamicInputs > input:focus{
-  border: none;
-}
+
+
 
 /* textfield styling */
 
@@ -45,4 +50,12 @@ line-height: 55.5px;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
+}
+
+.dynamicInputs .css-l4nqw5-MuiFormControl-root-MuiTextField-root .css-1mrdcig-MuiInputBase-root-MuiOutlinedInput-root{
+  height: 45px !important;
+}
+
+.dynamicInputs .css-oi6i2j-MuiFormControl-root-MuiTextField-root .css-1mrdcig-MuiInputBase-root-MuiOutlinedInput-root {
+  height: 45px !important;
 }

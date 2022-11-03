@@ -12,8 +12,8 @@ const HeaderComponent = () => {
         flexDirection: 'row',
         alignItems: "center",
         minHeight: 90,
-    }}>
-            <Container maxWidth="xl">
+    }} maxWidth="xl">
+            <Container >
                     <Img alt={'triping'} src={Logo}/>
             </Container>
         </Box>
