@@ -26,7 +26,7 @@ const EditMapDisplay = () => {
                 />
             </Box>
            <Box sx={{ '& button': { ml: 20 , height:'50px'} }}>
-              <Button variant="contained" size="small">
+              <Button className="customBtn"  size="small" sx={{backgroundColor:"#fff", color:"#572297", border: "1px solid #572297", fontSize: "16px", fontWeight:"600", fontFamily: "Montserrat"}}>
                 Send Invite
               </Button>
           </Box>

@@ -10,13 +10,18 @@ import TransitionsModal from '../component/ModalCoponent';
 
 const EditIterenary = () => {
   const [open, setOpen] = React.useState(false);
+  const [editing, setEditing] = React.useState(false);
   const handleOpen = () => setOpen(true);
+  const handleEditing = () => {
+    setEditing(true)
+    console.log('editing')
+  }
   return (
     <Box sx={{}}>
       {
         open && <TransitionsModal open={open} setOpen={setOpen} />
       }
-      <EditHeader open={open} setOpen={setOpen} handleOpen={handleOpen}/>
+      <EditHeader open={open} setOpen={setOpen} handleOpen={handleOpen} editing={editing}/>
       <EditBannerComponent />
       <Box>
         <Box sx={{display:"flex", alignItems:"center", width:'50%', textAlign:'left',ml:12, mb:4, mt:6}}>
@@ -25,7 +30,7 @@ const EditIterenary = () => {
             </Typography>
         </Box>
         <Box sx={{display:"flex", flexDirection:"row"}}>
-            <EditInputController />
+            <EditInputController setEditing={setEditing} handleEditing={handleEditing}/>
             <EditMapDisplay />
         </Box>
       </Box>
