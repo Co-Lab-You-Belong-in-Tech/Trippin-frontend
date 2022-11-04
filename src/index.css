@@ -7,10 +7,10 @@
 }
 html, body{
   height: 100vh;
-  /* overflow: hidden; */
   -ms-overflow-style: none;
   scrollbar-width: none;
   font-family: 'Montserrat';
+  color: #141820;
 }
 body::-webkit-scrollbar{
   display: none;
@@ -19,6 +19,7 @@ body::-webkit-scrollbar{
 .customBtn{
   font-family: 'Montserrat';
 }
+
 /* custom styles ends */
 .dynamicInputs{
   display: flex;
@@ -59,3 +60,6 @@ line-height: 55.5px;
 .dynamicInputs .css-oi6i2j-MuiFormControl-root-MuiTextField-root .css-1mrdcig-MuiInputBase-root-MuiOutlinedInput-root {
   height: 45px !important;
 }
+
+/* profile toggle button */
+

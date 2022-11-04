@@ -20,7 +20,7 @@ const NewTrip = () => {
   return (
     <>
        <HeaderComponent />
-        <Box minWidth='xl' sx={{display: 'flex', flexDirection:"row",flexGrow: 1, height: '88vh'}}>
+        <Box maxWidth='xl' sx={{display: 'flex', flexDirection:"row",flexGrow: 1, height: '88vh'}}>
             <Box sx={{width:'60%',}}>
                 <Box sx={{width:"600px", position: 'absolute', bottom: 20, left: 150}}>
                 <Box component='h2' sx={{
