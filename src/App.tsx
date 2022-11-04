@@ -8,6 +8,7 @@ import {
 // import HeaderComponent from './component/HeaderComponent';
 import EditIterenary from './screen/EditIterenary';
 import NewTrip from './screen/NewTrip';
+import TripProfileList from './screen/TripProfileList';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<NewTrip />} />
           <Route path='edit' element={<EditIterenary />}/>
+          <Route path='tripprofile' element={<TripProfileList />} />
         </Routes>
       </BrowserRouter>
     </Box>   

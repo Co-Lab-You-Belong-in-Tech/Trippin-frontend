@@ -1,0 +1,17 @@
+.profile-btn{
+    width: 44px; 
+    height: 44px; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: #CAD5F3; 
+    border: none;
+    cursor: pointer;
+  }
+
+  .close-btn{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
