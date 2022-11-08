@@ -22,20 +22,24 @@ type propsType = {
     handleEditing: () => void
 }
 const EditIterenaryFormControl = ({handleEditing, setEditing}: propsType) => {
-    const [openList, setOpenList] = React.useState(true);
+    const [openList, setOpenList] = React.useState("");
     const days = new Array(5).fill('');
 
-    const handleViewList = () => {
-        setOpenList(!openList);
+    const handleViewList = (i:string) => {
+       if(openList === i){
+        setOpenList("")
+       }else{
+        setOpenList(i)
+       }
       };
   return (
     <Box sx={{mt:4}}>
         {
             days.map((day,i) => {
-                return <Box sx={{mt:2, mb:1}}>
+                return <Box sx={{mt:2, mb:1}} key={i}>
                     <Box component="h3" sx={{color:"#141820", fontSize:"30px", lineHieght:"48.76px"}}>{`Day ${i + 1} - 10/${i + 3}`} <MdModeEdit size={18} color="#4A5568"/></Box>
                     <Box className='dynamicInputs' sx={{border:"1px solid #A0AEC0", width: {sm: "100%", lg: "87%"}, p: 1, height: "65px", mt: 1, mb: 1}} key={i}>
-                        <input placeholder='Add location' onFocus={() => handleEditing() } onBlur={() => setEditing(false)}/>  
+                        <input placeholder='Add location' onFocus={() => handleEditing() } onBlur={() => setEditing(false)} />  
                         <TextField id="startTime" label="Start Time" type="time" defaultValue="00:00"
                             InputLabelProps={{
                                 shrink: true,
@@ -61,11 +65,11 @@ const EditIterenaryFormControl = ({handleEditing, setEditing}: propsType) => {
                 <List sx={{  width: {sm: "100%", lg: "88%"},  bgcolor: 'background.paper' , mt:2}}component="nav" aria-labelledby="nested-list-subheader">
         {/* <ListItemText primary="" /> */}
      
-                        <ListItemButton onClick={handleViewList} sx={{display:'flex', justifyContent:"space-between"}} >
+                        <ListItemButton onClick={() => handleViewList(`${i}`)} sx={{display:'flex', justifyContent:"space-between"}} >
                         <Box component="h2" sx={{fontWeight: 600,}}></Box>
                              {openList ? <MdExpandLess size={24} color="#572297"/> : <MdExpandMore size={24} color="#572297"/>}
                         </ListItemButton>
-                        <Collapse in={openList} timeout="auto" unmountOnExit>
+                        <Collapse in={i.toString() === openList} timeout="auto" unmountOnExit={true}>
                                 <List component="div" disablePadding>
                                     <Box sx={{p:1, borderLeft: "4px solid #FBB348", width: {sm: "100%", lg: "100%"}, position: "relative"}}>
                             <Paper elevation={4} sx={{p: 1}}> 
