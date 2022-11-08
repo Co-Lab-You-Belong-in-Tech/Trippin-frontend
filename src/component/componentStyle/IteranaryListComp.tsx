@@ -30,8 +30,8 @@ const IteranaryListComp = () => {
         <Typography sx={{fontSize: "24px", fontWeight:"600", color:"#141820", fontFamily:'Montserrat'}}>My trip Itineraries</Typography>
         <Img alt="menu arrow left" src={Menu} style={{width:"20px", height:"22px"}}/>
       </Box>
-      <Grid container rowSpacing={{xs: 1, sm: 2, md: 3}} columnSpacing={{ xs: 1, sm: 2, md: 3, }} sx={{mt:4, mb:2}}>
-        <Grid xs={3}>
+      <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3, }} sx={{mt:4, mb:2}}>
+        <Grid xs={12} sm={6} md={3}>
             <Card sx={{width:"95%", borderRadius:"8px 8px 8px 8px", border:"1px solid #92ACEF" }}>
                 <CardMedia
                     component="img"
@@ -55,7 +55,7 @@ const IteranaryListComp = () => {
                 </CardContent>
             </Card>
         </Grid>
-        <Grid xs={3}>
+        <Grid xs={12} sm={6} md={3}>
             <Card sx={{width:"95%", borderRadius:"8px 8px 8px 8px", border:"1px solid #92ACEF" }}>
                 <CardMedia
                     component="img"
@@ -79,7 +79,7 @@ const IteranaryListComp = () => {
                 </CardContent>
             </Card>
         </Grid>
-        <Grid xs={3}>
+        <Grid   xs={12} sm={6} md={3}>
             <Card sx={{width:"95%", borderRadius:"8px 8px 8px 8px", border:"1px solid #92ACEF" }}>
                 <CardMedia
                     component="img"
@@ -103,7 +103,7 @@ const IteranaryListComp = () => {
                 </CardContent>
             </Card>
         </Grid>
-        <Grid xs={3}>
+        <Grid   xs={12} sm={6} md={3}>
             <Card sx={{width:"95%", borderRadius:"8px 8px 8px 8px", border:"1px solid #92ACEF" }}>
                 <CardMedia
                     component="img"
@@ -127,7 +127,7 @@ const IteranaryListComp = () => {
                 </CardContent>
             </Card>
         </Grid>
-        <Grid xs={3}>
+        <Grid   xs={12} sm={6} md={3}>
             <Card sx={{width:"95%", borderRadius:"8px 8px 8px 8px", border:"1px solid #92ACEF" }}>
                 <CardMedia
                     component="img"
@@ -151,7 +151,7 @@ const IteranaryListComp = () => {
                 </CardContent>
             </Card>
         </Grid>
-        <Grid xs={3}>
+        <Grid   xs={12} sm={6} md={3}>
             <Card sx={{width:"95%", borderRadius:"8px 8px 8px 8px", border:"1px solid #92ACEF" }}>
                 <CardMedia
                     component="img"
