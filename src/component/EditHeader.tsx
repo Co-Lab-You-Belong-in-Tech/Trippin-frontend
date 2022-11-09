@@ -9,10 +9,10 @@ import Logo from '../assets/final.png';
 import Avatar from '../assets/icons/Shape.png'
 
 type porpsType = {
-    open: boolean,
-    editing: boolean,
-    setOpen: React.Dispatch<React.SetStateAction<boolean>>,
-    handleOpen: any
+    open?: boolean,
+    editing?: boolean,
+    setOpen?: React.Dispatch<React.SetStateAction<boolean>>,
+    handleOpen?: any
 }
 const EditHeader = ({open, setOpen, handleOpen, editing}: porpsType) => {
   return (
