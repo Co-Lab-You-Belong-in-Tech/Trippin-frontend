@@ -1,17 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button';
 import { TextInputField } from 'evergreen-ui'
-
-import googleMap from "../assets/map.png"
-import { Img } from './ImageComponent'
 import ListItemsComp from './ListItemsComp'
+
+// react icons import
+// import {IoMdNavigate, IoNavigateCircleSharp} from 'react-icons/io'
+import {BiNavigation} from "react-icons/bi"
+import {IoReturnUpBackOutline} from 'react-icons/io5'
+
+// react googlemap API imports
+import {useJsApiLoader, GoogleMap, Marker, Autocomplete} from "@react-google-maps/api";
+
+
+
+
+
+// import { Skeleton } from '@mui/material';
+import Skeleton from './Skeleton';
+import { travelGroup } from '../utils/travelgroup';
+
+// const center = {lat: 37.7749, lng: 122.4194}
+const center = {lat:37.773972, lng:-122.431297}
 const EditMapDisplay = () => {
-  const travelGroup = [{id:1, email:'sarahsmith@gmail.com', accept: true}, {id:2,email: 'jhonedoe@gmail.com', accept: true},{id:3, email:'sarahKonoh@gmail.com', accept: false},{id:4, email:'hanks@gmail.com', accept: true}, {id:5, email:'sarahKonoh@gmail.com', accept: false}, {id:6, email:'sarahKonoh@gmail.com', accept: false}]
+const [map, setMap] = useState< google.maps.Map | null>(null)
+ 
+
+  const {isLoaded} = useJsApiLoader({
+    googleMapsApiKey: process.env.REACT_APP_MAP_API_KEY as string,
+    libraries: ['places']
+  })
+  
+  
   return (
     <Box sx={{display:"flex", flexDirection:"column", width:"40%", height:"auto", mt:5, mb:5}}>
-        <Box sx={{width: "459px", height:"459px"}}>
-            <Img alt="google map" src={googleMap}/>
+      {/* google map container */}
+        <Box sx={{width: "459px", height:"459px", position:"relative"}}>
+            {/* <Img alt="google map" src={googleMap}/> */}
+            {!isLoaded ? 
+            <Skeleton /> :
+            <GoogleMap center={center}
+             zoom={12} 
+             mapContainerClassName="w-full h-full"
+             onLoad={(map) => setMap(map)}
+             >
+                <Marker position={center}/>
+            </GoogleMap> 
+             }
+             <Box sx={{position:"absolute", top:20, right:100, cursor:"pointer", borderRadius: "100%", backgroundColor:"#3C1769", padding:"5px"}}>
+                <IoReturnUpBackOutline size={24} color="#fff" onClick={() => map?.panTo(center)}/>
+             </Box>
         </Box>
         <ListItemsComp  emails={travelGroup} />
         <Box> 

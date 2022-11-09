@@ -1,0 +1,1 @@
+export const travelGroup = [{id:1, email:'sarahsmith@gmail.com', accept: true}, {id:2,email: 'jhonedoe@gmail.com', accept: true},{id:3, email:'sarahKonoh@gmail.com', accept: false},{id:4, email:'hanks@gmail.com', accept: true}, {id:5, email:'sarahKonoh@gmail.com', accept: false}, {id:6, email:'sarahKonoh@gmail.com', accept: false}]

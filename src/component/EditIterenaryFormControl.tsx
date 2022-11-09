@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { RefObject } from 'react'
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
@@ -8,6 +8,8 @@ import TextField from '@mui/material/TextField';
 import {IoLocationSharp} from 'react-icons/io5'
 import {MdModeEdit} from 'react-icons/md';
 
+import {useJsApiLoader, Autocomplete} from "@react-google-maps/api";
+
 // images nad icons
 import {AiFillStar} from 'react-icons/ai';
 import {BsThreeDotsVertical} from "react-icons/bs";
@@ -16,6 +18,7 @@ import {MdExpandLess, MdExpandMore} from 'react-icons/md'
 
 import City from '../assets/icons/city.png'
 import { Img } from './ImageComponent';
+import Skeleton from './Skeleton';
 type propsType = {
     numOfDays?: number,
     setEditing: React.Dispatch<React.SetStateAction<boolean>>,
@@ -24,6 +27,11 @@ type propsType = {
 const EditIterenaryFormControl = ({handleEditing, setEditing}: propsType) => {
     const [openList, setOpenList] = React.useState("");
     const days = new Array(5).fill('');
+
+    const {isLoaded} = useJsApiLoader({
+        googleMapsApiKey: process.env.REACT_APP_MAP_API_KEY as string,
+        libraries: ['places']
+      })
 
     const handleViewList = (i:string) => {
        if(openList === i){
@@ -39,7 +47,11 @@ const EditIterenaryFormControl = ({handleEditing, setEditing}: propsType) => {
                 return <Box sx={{mt:2, mb:1}} key={i}>
                     <Box component="h3" sx={{color:"#141820", fontSize:"30px", lineHieght:"48.76px"}}>{`Day ${i + 1} - 10/${i + 3}`} <MdModeEdit size={18} color="#4A5568"/></Box>
                     <Box className='dynamicInputs' sx={{border:"1px solid #A0AEC0", width: {sm: "100%", lg: "87%"}, p: 1, height: "65px", mt: 1, mb: 1}} key={i}>
-                        <input placeholder='Add location' onFocus={() => handleEditing() } onBlur={() => setEditing(false)} />  
+                        {
+                            isLoaded ? <Autocomplete>
+                            <input placeholder='Add location' onFocus={() => handleEditing() } onBlur={() => setEditing(false)} style={{outline:"none"}}/> 
+                        </Autocomplete> : <Skeleton />
+                        } 
                         <TextField id="startTime" label="Start Time" type="time" defaultValue="00:00"
                             InputLabelProps={{
                                 shrink: true,
