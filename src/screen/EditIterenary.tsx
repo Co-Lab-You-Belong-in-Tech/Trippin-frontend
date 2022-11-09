@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState, RefObject } from 'react'
 import Box from '@mui/material/Box';
 import { Container, Typography } from '@mui/material';
 import EditHeader from '../component/EditHeader';
@@ -6,11 +6,14 @@ import EditBannerComponent from '../component/EditBannerComponent';
 import EditInputController from '../component/EditInputController';
 import EditMapDisplay from '../component/EditMapDisplay';
 import TransitionsModal from '../component/ModalCoponent';
+import { BsNutFill } from 'react-icons/bs';
 
 
 const EditIterenary = () => {
   const [open, setOpen] = React.useState(false);
   const [editing, setEditing] = React.useState(false);
+
+
   const handleOpen = () => setOpen(true);
   const handleEditing = () => {
     setEditing(true)
@@ -30,7 +33,7 @@ const EditIterenary = () => {
             </Typography>
         </Box>
         <Box sx={{display:"flex", flexDirection:"row"}}>
-            <EditInputController setEditing={setEditing} handleEditing={handleEditing}/>
+            <EditInputController setEditing={setEditing} handleEditing={handleEditing} />
             <EditMapDisplay />
         </Box>
       </Box>
