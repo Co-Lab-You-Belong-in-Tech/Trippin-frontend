@@ -1,12 +1,11 @@
 import { TextInput } from 'evergreen-ui'
 import React,{useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import LinearProgress from '@mui/material/LinearProgress';
 
 import {useNavigate} from 'react-router-dom';
 import { loginAction, registerAction } from '../store/Auth/user/action';
 import SignupForm from './SignupForm';
-import Skeleton from './Skeleton';
-import Loader from './UtilCOmponents/Loader';
 
 const LoginFormComp = () => {
     const [swithForm, setSwitchForm] = useState(0)
@@ -37,7 +36,7 @@ const LoginFormComp = () => {
   return (
     <>
         {
-            loading && <Loader />
+            loading && <LinearProgress sx={{height: "10px", borderRadius:"10px", marginBottom: "20px"}}/>
         }
         {
             swithForm === 0 ? 

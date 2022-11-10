@@ -19,6 +19,7 @@ import {MdExpandLess, MdExpandMore} from 'react-icons/md'
 import City from '../assets/icons/city.png'
 import { Img } from './ImageComponent';
 import Skeleton from './Skeleton';
+import { LinearProgress } from '@mui/material';
 type propsType = {
     numOfDays?: number,
     setEditing: React.Dispatch<React.SetStateAction<boolean>>,
@@ -50,7 +51,7 @@ const EditIterenaryFormControl = ({handleEditing, setEditing}: propsType) => {
                         {
                             isLoaded ? <Autocomplete>
                             <input placeholder='Add location' onFocus={() => handleEditing() } onBlur={() => setEditing(false)} style={{outline:"none"}}/> 
-                        </Autocomplete> : <Skeleton />
+                        </Autocomplete> : <LinearProgress sx={{height: "10px", borderRadius:"10px", marginBottom: "20px"}}/>
                         } 
                         <TextField id="startTime" label="Start Time" type="time" defaultValue="00:00"
                             InputLabelProps={{
