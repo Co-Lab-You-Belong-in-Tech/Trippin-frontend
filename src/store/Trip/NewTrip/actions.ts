@@ -20,7 +20,7 @@ export const newTripAction = (trip_name:string, trip_destination:string, trip_st
                 "Content-Type" : "application/json",
                 'X-Requested-With': 'XMLHttpRequest',
                 'X-CSRF-TOKEN' : document.querySelector('meta[name="csrf-token"]')?.getAttribute('content'),
-                'Authorization': `Bearer ${userLocaInfo.token}`
+                'Authorization': `Bearer ${userLocaInfo?.token}`
             }
         }
         const {data} = await axios.post(`${tripConfig.BASE_URL}${tripConfig.apiNewTrip}`, {trip_name, trip_destination, trip_start_date, trip_end_date}, config);
