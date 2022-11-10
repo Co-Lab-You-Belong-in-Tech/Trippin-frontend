@@ -12,9 +12,10 @@ type porpsType = {
     open?: boolean,
     editing?: boolean,
     setOpen?: React.Dispatch<React.SetStateAction<boolean>>,
-    handleOpen?: any
+    handleOpen?: any,
+    show?:boolean
 }
-const EditHeader = ({open, setOpen, handleOpen, editing}: porpsType) => {
+const EditHeader = ({open, setOpen, handleOpen, editing, show}: porpsType) => {
   return (
     <Paper elevation={0} sx={{position:"static",
     zIndex: 10}}>
@@ -26,7 +27,8 @@ const EditHeader = ({open, setOpen, handleOpen, editing}: porpsType) => {
     }}>
             <Container maxWidth="xl" sx={{display: 'flex', alignItmes:'center', justifyContent:'space-between'}}>
                     <Img alt={'triping'} src={Logo}/>
-                    <Box sx={{display:'flex',  alignItems:'center', gap: 2, width:'250px', ml: "auto", }}>
+                    {
+                        show ? <Box sx={{display:'flex',  alignItems:'center', gap: 2, width:'250px', ml: "auto", }}>
                         {
                            editing &&  <Box sx={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent:'space-between', gap:1, width:'85px'}}>
                             <Box sx={{width:'6px', height:'6px', backgroundColor:' #52BD94', borderRadius:10}}></Box>
@@ -42,6 +44,9 @@ const EditHeader = ({open, setOpen, handleOpen, editing}: porpsType) => {
                             </Box>
                         </Box>
                     </Box>
+                    :
+                    null
+                    }
             </Container>
         </Box>
    </Paper>

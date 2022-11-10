@@ -17,8 +17,9 @@ import {useJsApiLoader, GoogleMap, Marker, Autocomplete} from "@react-google-map
 
 
 // import { Skeleton } from '@mui/material';
-import Skeleton from './Skeleton';
+
 import { travelGroup } from '../utils/travelgroup';
+import Skeleton from './Skeleton';
 
 // const center = {lat: 37.7749, lng: 122.4194}
 const center = {lat:37.773972, lng:-122.431297}

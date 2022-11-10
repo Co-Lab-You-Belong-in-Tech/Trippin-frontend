@@ -12,7 +12,7 @@ import { BsNutFill } from 'react-icons/bs';
 const EditIterenary = () => {
   const [open, setOpen] = React.useState(false);
   const [editing, setEditing] = React.useState(false);
-
+  const show = true
 
   const handleOpen = () => setOpen(true);
   const handleEditing = () => {
@@ -24,7 +24,7 @@ const EditIterenary = () => {
       {
         open && <TransitionsModal open={open} setOpen={setOpen} />
       }
-      <EditHeader open={open} setOpen={setOpen} handleOpen={handleOpen} editing={editing}/>
+      <EditHeader open={open} setOpen={setOpen} handleOpen={handleOpen} editing={editing} show={show}/>
       <EditBannerComponent />
       <Box>
         <Box sx={{display:"flex", alignItems:"center", width:'50%', textAlign:'left',ml:12, mb:4, mt:6}}>
