@@ -59,7 +59,7 @@ const EditIterenaryFormControl = ({handleEditing, setEditing}: propsType) => {
                             inputProps={{
                                 step: 300, // 5 min
                             }}
-                            sx={{ width: 250, mr:1, ml: 1, p:0 }}
+                            sx={{ width: 200, mr:1, ml: 10, p:0 }}
                         />
                          <TextField id="endTime" label="End Time" type="time" defaultValue="00:00"
                             InputLabelProps={{
@@ -68,9 +68,9 @@ const EditIterenaryFormControl = ({handleEditing, setEditing}: propsType) => {
                             inputProps={{
                                 step: 300, // 5 min
                             }}
-                            sx={{ width: 250, mr:1, ml: 1 }}
+                            sx={{ width: 200, mr:1, ml: 1 }}
                         />
-                        <IoLocationSharp size={35} color="#572297" id="locationEdit" />
+                        <IoLocationSharp size={30} color="#572297" id="locationEdit" />
                     </Box>
                     {/* trip plan card display */}
                     

@@ -15,7 +15,7 @@ function App() {
   return (
   <>
     <CssBaseline />
-    <Box maxWidth="xl">
+    <Box minWidth="xl">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
