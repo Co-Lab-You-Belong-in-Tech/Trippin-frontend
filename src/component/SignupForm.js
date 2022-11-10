@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import LinearProgress from '@mui/material/LinearProgress';
 
 import {useNavigate} from 'react-router-dom';
 import { registerAction } from '../store/Auth/user/action';
@@ -34,7 +35,7 @@ const SignupForm = ({setSwitchForm}) => {
   return (
   <>
   {
-    loading && <Loader />
+    loading && <LinearProgress sx={{height: "10px", borderRadius:"10px", marginBottom: "20px"}}/>
   }
     <div className='w-[670px] mt-5 mb-5 ml-auto mr-auto flex flex-col gap-4 items-center h-[45vh] p-1'>
                 <h3 className='text-[#141820] font-bold text-lg text-[Montserrat] text-[24px]'>Sign Up</h3>

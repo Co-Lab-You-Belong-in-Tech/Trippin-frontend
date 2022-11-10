@@ -8,6 +8,7 @@ import {useJsApiLoader, Autocomplete} from "@react-google-maps/api";
 import Skeleton from './Skeleton';
 import { RootState } from '..';
 import { newTripAction } from '../store/Trip/NewTrip/actions';
+import LinearProgress from '@mui/material/LinearProgress';
 import Loader from './UtilCOmponents/Loader';
 
 // icons
@@ -63,7 +64,7 @@ const TripPlanningForm = ({routeTo}) => {
   return (
     <>
         {
-      loading && <Loader />
+      loading && <LinearProgress sx={{height: "10px", borderRadius:"10px", marginBottom: "20px"}}/>
     }
     
     <Box component="form" sx={{display: 'flex', flexDirection:'column', justifyContent:'center', alignItems: 'space-between', pl:2,pr:2}}>
