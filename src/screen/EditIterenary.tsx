@@ -13,7 +13,7 @@ const EditIterenary = () => {
   const [open, setOpen] = React.useState(false);
   const [editing, setEditing] = React.useState(false);
   const show = true
-
+  const createdTrip = JSON.parse(localStorage.getItem('newtrip') || "")
   const handleOpen = () => setOpen(true);
   const handleEditing = () => {
     setEditing(true)
@@ -25,7 +25,7 @@ const EditIterenary = () => {
         open && <TransitionsModal open={open} setOpen={setOpen} />
       }
       <EditHeader open={open} setOpen={setOpen} handleOpen={handleOpen} editing={editing} show={show}/>
-      <EditBannerComponent />
+      <EditBannerComponent createdTrip={createdTrip}/>
       <Box>
         <Box sx={{display:"flex", alignItems:"center", width:'50%', textAlign:'left',ml:12, mb:4, mt:6}}>
             <Typography sx={{color:"#141820", fontSize:"24px", fontWeight: 600, lineHeight:"29.26px"}}>

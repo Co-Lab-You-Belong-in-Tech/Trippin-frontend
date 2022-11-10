@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import { TextInputField } from 'evergreen-ui'
 import ListItemsComp from './ListItemsComp'
 
+
 // react icons import
 // import {IoMdNavigate, IoNavigateCircleSharp} from 'react-icons/io'
 import {BiNavigation} from "react-icons/bi"
@@ -11,6 +12,7 @@ import {IoReturnUpBackOutline} from 'react-icons/io5'
 
 // react googlemap API imports
 import {useJsApiLoader, GoogleMap, Marker, Autocomplete} from "@react-google-maps/api";
+// import Geocode from "react-geocode"
 
 
 
@@ -23,6 +25,7 @@ import Skeleton from './Skeleton';
 
 // const center = {lat: 37.7749, lng: 122.4194}
 const center = {lat:37.773972, lng:-122.431297}
+// const center = "Lagos, Nigeria";
 const EditMapDisplay = () => {
 const [map, setMap] = useState< google.maps.Map | null>(null)
  
@@ -31,7 +34,7 @@ const [map, setMap] = useState< google.maps.Map | null>(null)
     googleMapsApiKey: process.env.REACT_APP_MAP_API_KEY as string,
     libraries: ['places']
   })
-  
+  // Geocode.setApikey(process.env.REACT_APP_MAP_API_KEY)
   
   return (
     <Box sx={{display:"flex", flexDirection:"column", width:"40%", height:"auto", mt:5, mb:5}}>
