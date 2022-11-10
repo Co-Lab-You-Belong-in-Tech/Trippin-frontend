@@ -1,8 +1,14 @@
 import { TextInput } from 'evergreen-ui'
 import React,{useState} from 'react'
+import {useNavigate} from 'react-router-dom';
 
 const LoginFormComp = () => {
     const [swithForm, setSwitchForm] = useState(0)
+    const navigate = useNavigate()
+
+    const handleNavigate = () => {
+        navigate('/newtrip')
+    }
   return (
     <>
         {
@@ -14,7 +20,7 @@ const LoginFormComp = () => {
                     <TextInput name="email" placeholder="Email" style={{width: "100%", marginBottom:"10px"}}/>
                     <TextInput name="password" placeholder="Password" style={{width: "100%", marginTop:"10px"}}/>
                     <div className="flex flex-col items-center justify-center gap-3">
-                        <button className='flex items-center justify-center bg-[#572297] rounded-[4px] text-[#fff] font-bold font-[Montserrat] pt-2 pb-2 pl-2 pr-2 mt-2 mb-2 w-[79px] h-[48px] text-[16px]'>Login
+                        <button className='flex items-center justify-center bg-[#572297] rounded-[4px] text-[#fff] font-bold font-[Montserrat] pt-2 pb-2 pl-2 pr-2 mt-2 mb-2 w-[79px] h-[48px] text-[16px]' onClick={() => handleNavigate()}>Login
                         </button>
                         <a href="#">Forgot password?</a>
                         <p>Need an account? <a href="#" onClick={() => setSwitchForm(1)}>Sign Up.</a></p>
@@ -29,7 +35,7 @@ const LoginFormComp = () => {
                     <TextInput name="email" placeholder="Email" style={{width: "100%", marginBottom:"10px"}}/>
                     <TextInput name="password" placeholder="Password" style={{width: "100%", marginTop:"10px"}}/>
                     <div className="flex flex-col items-center justify-center gap-3">
-                        <button className='flex items-center justify-center bg-[#572297] rounded-[4px] text-[#fff] font-bold font-[Montserrat] pt-2 pb-2 pl-2 pr-2 mt-2 mb-2 w-[90px] h-[48px] text-[16px]'>Sign Up
+                        <button className='flex items-center justify-center bg-[#572297] rounded-[4px] text-[#fff] font-bold font-[Montserrat] pt-2 pb-2 pl-2 pr-2 mt-2 mb-2 w-[90px] h-[48px] text-[16px]' onClick={() => handleNavigate()}>Sign Up
                         </button>
                         <a href="#">Forgot password?</a>
                          
