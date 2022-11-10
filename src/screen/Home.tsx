@@ -7,9 +7,10 @@ import LoginFormComp from '../component/LoginForm';
 
 
 const Home = () => {
+  const show = false;
   return (
     <div className='flex flex-col'>
-      <EditHeader />
+      <EditHeader show={show}/>
       <CarouselComp />
       <LoginFormComp />
       <Features />
