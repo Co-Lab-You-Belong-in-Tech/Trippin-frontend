@@ -37,7 +37,7 @@ const Features = () => {
                 <div className='flex flex-col gap-3 items-center justify-center text-center w-[260px] '>
                     <div><img src={colabo} alt="colabo" /></div>
                     <div>
-                        <h4 className='text-[24px] text-[#141820] leading-[29px] font-bold mt-2 mb-2'>Colaborate with your trafvel buddies!</h4>
+                        <h4 className='text-[24px] text-[#141820] leading-[29px] font-bold mt-2 mb-2'>Colaborate with your travel buddies!</h4>
                         <p className='text-[17px] text-[#141820] leading-[30px] font-[400] mt-2 mb-2'>And make sure everyone participates on your trip planning!</p>
                     </div>
                 </div>
