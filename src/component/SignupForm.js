@@ -42,7 +42,7 @@ const SignupForm = ({setSwitchForm}) => {
                 <div className='flex flex-col items-left w-[70%] gap-1 '>
                     <p className='text-[#4A5568] text-[16px]'>Enter your email and create a password to start your planning.</p>
                     <TextInput name="email" placeholder="Email" style={{width: "100%", marginBottom:"10px"}} value={email} onChange={(e)=> setEmail(e.target.value)}/>
-                    <TextInput name="password" placeholder="Password" style={{width: "100%", marginTop:"10px"}} value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    <TextInput name="password" type="password" placeholder="Password" style={{width: "100%", marginTop:"10px"}} value={password} onChange={(e) => setPassword(e.target.value)}/>
                     <div className="flex flex-col items-center justify-center gap-3">
                         <button className='flex items-center justify-center bg-[#572297] rounded-[4px] text-[#fff] font-bold font-[Montserrat] pt-2 pb-2 pl-2 pr-2 mt-2 mb-2 w-[90px] h-[48px] text-[16px]' onClick={(e) => handleRegistration(e)}>Sign Up
                         </button>
