@@ -45,7 +45,7 @@ const LoginFormComp = () => {
                 <div className='flex flex-col items-left w-[70%] gap-1 '>
                     <p className='text-[#4A5568] text-[18px]'>Enter your email and password to continue planning.</p>
                     <TextInput name="email" placeholder="Email" value={email} onChange={(e)=> setEmail(e.target.value)} style={{width: "100%", marginBottom:"10px"}}/>
-                    <TextInput name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} style={{width: "100%", marginTop:"10px",}}/>
+                    <TextInput type="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} style={{width: "100%", marginTop:"10px",}}/>
                     <div className="flex flex-col items-center justify-center gap-3">
                         <button className='flex items-center justify-center bg-[#572297] rounded-[4px] text-[#fff] font-bold font-[Montserrat] pt-2 pb-2 pl-2 pr-2 mt-2 mb-2 w-[79px] h-[48px] text-[16px]' onClick={(e) => handleLogin(e)}>Login
                         </button>
