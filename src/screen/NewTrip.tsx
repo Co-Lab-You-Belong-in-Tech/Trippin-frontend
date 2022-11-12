@@ -2,8 +2,8 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { Box, Paper } from '@mui/material';
 import BackgroundImg from '../assets/backgroundImg.png'
-import HeaderComponent from '../component/HeaderComponent';
-import TripPlanningForm from '../component/TripPlanningForm';
+import HeaderComponent from '../component/commonComponents/HeaderComponent';
+import TripPlanningForm from '../component/tripComponents/TripPlanningForm';
 
 
 interface itineraryItems {

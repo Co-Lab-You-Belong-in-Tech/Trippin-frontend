@@ -5,9 +5,9 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from "@mui/material/Typography";
 import { Img } from './ImageComponent';
-import Logo from '../assets/final.png'
+import Logo from '../../assets/final.png';
 
-import './componentStyle/headerStyle.css'
+import '../componentStyle/headerStyle.css';
 import {BsFillPersonFill} from "react-icons/bs";
 import {GrFormClose} from "react-icons/gr";
 

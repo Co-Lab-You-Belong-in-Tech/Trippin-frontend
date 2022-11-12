@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button';
 import { TextInputField } from 'evergreen-ui'
-import ListItemsComp from './ListItemsComp'
+import ListItemsComp from '../featuresComponents/ListItemsComp'
 
 
 // react icons import
@@ -20,8 +20,8 @@ import {useJsApiLoader, GoogleMap, Marker, Autocomplete} from "@react-google-map
 
 // import { Skeleton } from '@mui/material';
 
-import { travelGroup } from '../utils/travelgroup';
-import Skeleton from './Skeleton';
+import { travelGroup } from '../../utils/travelgroup';
+import Skeleton from '../commonComponents/Skeleton';
 
 // const center = {lat: 37.7749, lng: 122.4194}
 const center = {lat:37.773972, lng:-122.431297}

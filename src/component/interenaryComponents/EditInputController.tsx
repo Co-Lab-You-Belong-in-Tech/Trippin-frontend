@@ -5,12 +5,13 @@ import EditIterenaryFormControl from './EditIterenaryFormControl';
 type editInpttype = {
   setEditing: React.Dispatch<React.SetStateAction<boolean>>,
   handleEditing: () => void,
+  createdTrip: any
 }
-const EditInputController = ({handleEditing, setEditing}: editInpttype) => {
+const EditInputController = ({handleEditing, setEditing, createdTrip}: editInpttype) => {
   return (
     
         <Box sx={{width:"60%",  ml:12, pb:2}}>
-            <EditIterenaryFormControl handleEditing={handleEditing} setEditing={setEditing} />
+            <EditIterenaryFormControl handleEditing={handleEditing} setEditing={setEditing} createdTrip={createdTrip}/>
         </Box>
   )
 }

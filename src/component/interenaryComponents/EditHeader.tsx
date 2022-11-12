@@ -4,9 +4,9 @@ import { Paper } from '@mui/material';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
-import { Img } from './ImageComponent';
-import Logo from '../assets/final.png';
-import Avatar from '../assets/icons/Shape.png'
+import { Img } from '../commonComponents/ImageComponent';
+import Logo from '../../assets/final.png';
+import Avatar from '../../assets/icons/Shape.png'
 
 type porpsType = {
     open?: boolean,

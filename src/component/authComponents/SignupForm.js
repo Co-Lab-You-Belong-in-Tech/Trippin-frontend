@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import LinearProgress from '@mui/material/LinearProgress';
 
 import {useNavigate} from 'react-router-dom';
-import { registerAction } from '../store/Auth/user/action';
+import { registerAction } from '../../store/Auth/user/action';
 import { TextInput } from 'evergreen-ui'
-import Loader from './UtilCOmponents/Loader';
+import Loader from '../UtilCOmponents/Loader';
 
 const SignupForm = ({setSwitchForm}) => {
   const [email, setEmail] = useState("")

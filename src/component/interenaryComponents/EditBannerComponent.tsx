@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import {MdModeEdit} from 'react-icons/md';
 import {BsInfo, BsFillCameraFill} from 'react-icons/bs';
-import BannerImg from '../assets/editbanner.png'
+import BannerImg from '../../assets/editbanner.png'
 
 type bannerType = {
     createdTrip : any
