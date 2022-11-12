@@ -5,7 +5,7 @@ import {AiFillTwitterCircle, AiFillInstagram} from 'react-icons/ai';
 import {FaFacebook} from 'react-icons/fa';
 import {GrPinterest} from 'react-icons/gr';
 
-import Logo from '../assets/final.png';
+import Logo from '../../assets/final.png'
 
 const Footer = () => {
   return (

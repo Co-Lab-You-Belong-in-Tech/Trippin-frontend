@@ -12,5 +12,5 @@ export const apiSignupUser = "/register";
 
 
 // API - Trip url
-
 export const apiNewTrip = "/trips";
+export const apiAddTripPlan = "/:id/itineraries";

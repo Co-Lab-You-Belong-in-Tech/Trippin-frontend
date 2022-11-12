@@ -1,11 +1,11 @@
 import React, { useRef, useState, RefObject } from 'react'
 import Box from '@mui/material/Box';
 import { Container, Typography } from '@mui/material';
-import EditHeader from '../component/EditHeader';
-import EditBannerComponent from '../component/EditBannerComponent';
-import EditInputController from '../component/EditInputController';
-import EditMapDisplay from '../component/EditMapDisplay';
-import TransitionsModal from '../component/ModalCoponent';
+import EditHeader from '../component/interenaryComponents/EditHeader';
+import EditBannerComponent from '../component/interenaryComponents/EditBannerComponent';
+import EditInputController from '../component/interenaryComponents/EditInputController';
+import EditMapDisplay from '../component/interenaryComponents/EditMapDisplay';
+import TransitionsModal from '../component/commonComponents/ModalCoponent';
 import { BsNutFill } from 'react-icons/bs';
 
 
@@ -33,7 +33,7 @@ const EditIterenary = () => {
             </Typography>
         </Box>
         <Box sx={{display:"flex", flexDirection:"row"}}>
-            <EditInputController setEditing={setEditing} handleEditing={handleEditing} />
+            <EditInputController setEditing={setEditing} handleEditing={handleEditing} createdTrip={createdTrip}/>
             <EditMapDisplay />
         </Box>
       </Box>

@@ -2,9 +2,10 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 
 // carosel images
-import Caro1 from '../assets/caro1.png';
-import Caro2 from '../assets/caro2.png'
-import Caro3 from '../assets/caro3.png'
+import Caro1 from "../../assets/caro1.png";
+import Caro2 from '../../assets/caro2.png';
+import Caro3 from '../../assets/caro3.png';
+
 const caroselData = [
     {
         id: 1,

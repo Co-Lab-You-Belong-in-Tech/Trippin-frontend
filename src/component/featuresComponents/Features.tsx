@@ -1,9 +1,9 @@
 import React from 'react';
 
-import weTripping from '../assets/we-trippin.png'
-import optimize from '../assets/optimize.png';
-import colabo from '../assets/colabo.png';
-import access from '../assets/access.png';
+import weTripping from '../../assets/we-trippin.png'
+import optimize from '../../assets/optimize.png';
+import colabo from '../../assets/colabo.png';
+import access from '../../assets/access.png';
 
 const Features = () => {
   return (

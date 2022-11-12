@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import LinearProgress from '@mui/material/LinearProgress';
 
 import {useNavigate} from 'react-router-dom';
-import { loginAction, registerAction } from '../store/Auth/user/action';
+import { loginAction, registerAction } from '../../store/Auth/user/action';
 import SignupForm from './SignupForm';
 
 const LoginFormComp = () => {
@@ -30,7 +30,7 @@ const LoginFormComp = () => {
    
     useEffect(() => {
         if(userInfo) {
-          navigate('/newtrip')
+          navigate('/tripprofile')
         }
       },[navigate, userInfo])
   return (

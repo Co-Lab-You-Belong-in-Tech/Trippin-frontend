@@ -5,11 +5,11 @@ import { TextInputField } from 'evergreen-ui'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import {useJsApiLoader, Autocomplete} from "@react-google-maps/api";
-import Skeleton from './Skeleton';
-import { RootState } from '..';
-import { newTripAction } from '../store/Trip/NewTrip/actions';
+import Skeleton from '../commonComponents/Skeleton';
+import { RootState } from '../..';
+import { newTripAction } from '../../store/Trip/NewTrip/actions';
 import LinearProgress from '@mui/material/LinearProgress';
-import Loader from './UtilCOmponents/Loader';
+import Loader from '../UtilCOmponents/Loader';
 
 // icons
 

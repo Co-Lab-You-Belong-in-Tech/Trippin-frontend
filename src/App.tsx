@@ -21,7 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/newtrip" element={<NewTrip />} />
           <Route path='edit' element={<EditIterenary />}/>
-          <Route path='tripprofile' element={<TripProfileList />} />
+          <Route path='/tripprofile' element={<TripProfileList />} />
         </Routes>
       </BrowserRouter>
     </Box>   
