@@ -1,4 +1,4 @@
-import React, { RefObject, useState } from 'react'
+import React, { RefObject, useState,useRef,useEffect } from 'react'
 import dayjs, { Dayjs } from 'dayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -33,20 +33,27 @@ import { addTripPlan } from '../../store/Trip/EditIterenary/action';
 //     handleEditing: () => void
 // }
 const EditIterenaryFormControl = ({handleEditing, setEditing, createdTrip}) => {
-    const [addMore, setAddMore] = useState(1)
+    // const [addMore, setAddMore] = useState(1)
+    const [days, setDays] = useState([1]);
     const [openList, setOpenList] = useState("");
     const [tripLocation, setTripLocation] = useState("");
+    const [inputValue, setInputValue] = useState("");
     const [startTime, setStartTime] = useState("");
     const [endTime, setEndTime] = useState("");
+
+    const inputRef = useRef(null);
+
+
     const {data} = createdTrip;
+   
 
+    // const getNewTrip =  JSON.parse(localStorage.getItem("newtrip") || "")
 
-    const getNewTrip =  JSON.parse(localStorage.getItem("newtrip") || "")
-    let first = getNewTrip?.data.trip_start_date;
-    let second =  getNewTrip?.data.trip_end_date;
-
-    // let numOfDays = datediff(first,second)
-    const days = new Array(addMore).fill('');
+    const handleAddMore = () => {
+        setDays([...days, days.length + 1]);
+        console.log(days);
+        setTripLocation([...tripLocation, ""]);
+    }
 
 // google API code
     const {isLoaded} = useJsApiLoader({
@@ -58,7 +65,7 @@ const EditIterenaryFormControl = ({handleEditing, setEditing, createdTrip}) => {
       const addNewTripPlan = useSelector((state) => state?.addTripPlanRed);
 
       const {loading, tripPlan} = addNewTripPlan;
-
+      let tripPlanFromLS = JSON.parse(localStorage.getItem('tripPlanSaved'))
       const dispatch = useDispatch()
       
       const handleSubmit = (e) => {
@@ -76,9 +83,27 @@ const EditIterenaryFormControl = ({handleEditing, setEditing, createdTrip}) => {
         setOpenList(i)
        }
       };
-    const handleAddMore = () => {
-        setAddMore(addMore + 1)
+    
+    const checkInd = (i, arr, item) => {
+        //check if the triplocation at that index and replace with e.target.value
+        return arr.splice(i, 1, item)
     }
+    const handleInputValue = (i,e) => {
+        e.preventDefault()
+        // inputValue, setInputValue
+        setTripLocation(e.target.value)   
+    }
+
+    // useEffect(()=> {
+    //     if (document.activeElement === inputRef.current) {
+    //         console.log('element has focus',inputRef.current);
+    //       } else {
+    //         console.log('element does NOT have focus');
+    //       }
+    //     // inputRef.current?.focus();
+    //     // let newTripLocate = checkInd(i, [...tripLocation], inputValue);
+    //     // setTripLocation(newTripLocate);
+    // })
   return (
     <>
      {
@@ -94,12 +119,12 @@ const EditIterenaryFormControl = ({handleEditing, setEditing, createdTrip}) => {
             days.map((day,i) => {
                 return <Box sx={{mt:2, mb:1}} key={i}>
                     <Box component="h3" sx={{color:"#141820", fontSize:"30px", lineHieght:"48.76px"}}>{`Day ${i + 1} / ${data?.trip_start_date}`} <MdModeEdit size={18} color="#4A5568"/></Box>
-                    <Box  className='dynamicInputs' sx={{border:"1px solid #A0AEC0", width: {sm: "100%", lg: "87%"}, p: 1, height: "65px", mt: 1, mb: 1}} key={i} >
+                    <Box  className='dynamicInputs' sx={{border:"1px solid #A0AEC0", width: {sm: "100%", lg: "87%"}, p: 1, height: "65px", mt: 1, mb: 1}}>
                     {/* onSubmit={(e) => handleSubmit(e)} */}
                     
                         {
                             isLoaded ? <Autocomplete>
-                            <input placeholder='Add location' style={{outline:"none"}} value={ tripLocation} onInput={(e) => setTripLocation(e.target.value)}/> 
+                            <input placeholder='Add location' style={{outline:"none"}} ref={inputRef} value={tripLocation} onChange={(e) => handleInputValue(i,e)}/> 
                         </Autocomplete> : <LinearProgress sx={{height: "10px", borderRadius:"10px", marginBottom: "20px"}}/>
                         } 
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -140,7 +165,9 @@ const EditIterenaryFormControl = ({handleEditing, setEditing, createdTrip}) => {
                         <Box component="h2" sx={{fontWeight: 600,}}></Box>
                              {openList ? <MdExpandLess size={24} color="#572297"/> : <MdExpandMore size={24} color="#572297"/>}
                         </ListItemButton>
-                        <Collapse in={i.toString() === openList} timeout="auto" unmountOnExit={true}>
+                        {
+                            tripPlanFromLS?.map(trip => {
+                                return <Collapse in={i.toString() === openList} timeout="auto" unmountOnExit={true}>
                                 <List component="div" disablePadding>
                                     <Box sx={{p:1, borderLeft: "4px solid #FBB348", width: {sm: "100%", lg: "100%"}, position: "relative"}}>
                             <Paper elevation={4} sx={{p: 1}}> 
@@ -148,7 +175,7 @@ const EditIterenaryFormControl = ({handleEditing, setEditing, createdTrip}) => {
                                     <Box><Img alt="city" src={City}/></Box>
                                     <Box sx={{display:"flex",flexDirection: "column", gap: 1, color:"#141820", fontSize:"14px", fontWeight:400}}>
                                         <Box sx={{display:"flex", flexDirection: "column",gap:1}}>
-                                            <h3>{tripPlan?.data.location_name}</h3>
+                                            <h3>{trip?.location_name}</h3>
                                             <Box sx={{display:"flex", flexDirection: "row", alignItems:"center",gap:1}}>
                                             <span>4.8</span>
                                             <Box sx={{display:"flex", flexDirection: "row", alignItems:"center"}}> <AiFillStar color='#FBB348' size={18}/> <AiFillStar color='#FBB348' size={18}/> <AiFillStar color='#FBB348' size={18}/> <AiFillStar color='#FBB348' size={18}/> <AiFillStar color='#FBB348' size={18}/>
@@ -174,16 +201,19 @@ const EditIterenaryFormControl = ({handleEditing, setEditing, createdTrip}) => {
                                 <span style={{paddingTop: "5px"}}>15 min walk</span>
                             </Box>
                             <Box sx={{display: "flex", flexDirection: "column", position: "absolute", top: "12%", right: "102%", height:"auto"}}>
-                                <Box sx={{display: "flex", alignItems: "center", justifyContent: "center",  border: "1px solid #E2E8F0", borderRadius: "4px", boxSizing:"border-box",mt:0.5,  mb:1, p: 1, color:"#141820", fontSize: "12px", fontWeight: "400", lineHeight:"12px"}}>{tripPlan?.data.itinerary_start_time
+                                <Box sx={{display: "flex", alignItems: "center", justifyContent: "center",  border: "1px solid #E2E8F0", borderRadius: "4px", boxSizing:"border-box",mt:0.5,  mb:1, p: 1, color:"#141820", fontSize: "12px", fontWeight: "400", lineHeight:"12px"}}>{trip?.itinerary_start_time
 }am</Box>
 
                                 <Box sx={{display: "flex", alignItems: "center", justifyContent: "center",  border: "1px solid #E2E8F0", borderRadius: "4px", boxSizing:"border-box", mt: 0.5, mb:1, p: 1, color:"#141820", fontSize: "12px", fontWeight: "400", lineHeight:"12px"}} >
-                                {tripPlan?.data.itinerary_end_time}pm
+                                {trip?.itinerary_end_time}pm
                                 </Box>
                             </Box>
                             </Box>
                                 </List>
                         </Collapse>
+                            })
+                        }
+                        
                     </List>
                 </Box>
             })

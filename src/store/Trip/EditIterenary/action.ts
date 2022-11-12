@@ -30,16 +30,21 @@ export const addTripPlan = (location_name:string, itinerary_start_time:string,it
             }
         }
 
-        const {data}  = await axios.post(`${tripConfig.BASE_URL}/trips/${newTripInf?.data.id}/itineraries`, {location_name, itinerary_start_time, itinerary_end_time,description, ratings,number_of_reviews,location_type}, config)
-
-       localStorage.setItem('itPlan', JSON.stringify(data));
+         await axios.post(`${tripConfig.BASE_URL}/trips/${newTripInf?.data.id}/itineraries`, {location_name, itinerary_start_time, itinerary_end_time,description, ratings,number_of_reviews,location_type}, config)
+        .then((result) => {
+            dispatch({ 
+                loading: false,
+                type: actions.EDIT_ITERENARY,
+                payload: {location_name, itinerary_start_time, itinerary_end_time,description, ratings,number_of_reviews,location_type}
+            })
+        })
+        
         
 
-        dispatch({ 
-            loading: false,
-            type: actions.EDIT_ITERENARY,
-            payload: data
-        })
+    //    localStorage.setItem('itPlan', JSON.stringify(data));
+        
+
+       
 
    } catch (error) {
     dispatch({
