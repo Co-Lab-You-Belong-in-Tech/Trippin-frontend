@@ -42,13 +42,13 @@ const IteranaryListComp = () => {
       const navigate = useNavigate()
       
       const handleGetSingleTrip = (id) => {
-            navigate(`/details/${id}`)
+            navigate(`/edit/${id}`)
       }
       
   return (
     <Box sx={{ width: '90%', mt:4, mb: 2, ml:"auto", mr:"auto" }}>
       <Box sx={{mt: 1, mb: 1, textAlign:"left", display:"flex", gap: 2, alignItems:"center"}}>
-        <Typography sx={{fontSize: "24px", fontWeight:"600", color:"#141820", fontFamily:'Montserrat'}}>My trip Itineraries</Typography>
+        <Typography sx={{fontSize: "24px", fontWeight:"600", color:"#141820", fontFamily:'Montserrat'}}>My Trip Itineraries</Typography>
         <Img alt="menu arrow left" src={Menu} style={{width:"20px", height:"22px"}}/>
       </Box>
       <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3, }} sx={{mt:4, mb:2}}>
@@ -73,7 +73,7 @@ const IteranaryListComp = () => {
                         {trip?.trip_start_date} / {trip?.trip_end_date}
                     </Typography>
                     <Typography gutterBottom variant="h5" component="div" sx={{fontSize:"14px", fontWeight:"400", lineHeight:"18px", mt:2}}>
-                        Trip ID: #{trip?.trip_code}
+                        Trip ID: {trip?.trip_code}
                     </Typography>
                 </CardContent>
             </Card>

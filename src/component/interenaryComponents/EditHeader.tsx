@@ -39,9 +39,14 @@ const EditHeader = ({open, setOpen, handleOpen, editing, show}: porpsType) => {
                         </Box>
                         }
                         <Box sx={{display:"flex",gap: 2,ml:"auto",}}>
-                            <Button variant="contained" sx={{display:'flex',alignItems:'center', backgroundColor:'#572297', borderRadius:1, color: "#fff", textTransform:'capitalize', fontFamily:'Montserrat', fontWeight:600, fontStyle:'normal', fontSize:'16px'}} onClick={handleOpen}>Save</Button>
-                            <Box sx={{width:'44px', height:'44px', backgroundColor:'#CAD5F3', borderRadius:5, display:'flex', alignItems:'center', justifyContent:'center'}}>
-                                <Img alt='avatar' src={Avatar}/>
+                              <Button variant="contained" sx={{ display: 'flex', alignItems: 'center', backgroundColor: '#572297', borderRadius: 1, color: "#fff", textTransform: 'capitalize', fontFamily: 'Montserrat', fontWeight: 600, fontStyle: 'normal', fontSize: '16px' }} onClick={handleOpen}>Save</Button>
+                              
+                              <Box sx={{ width: '44px', height: '44px', backgroundColor: '#CAD5F3', borderRadius: 5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                 
+                                  <Img alt='avatar' src={Avatar} /> 
+                                  
+                                  
+                                  
                             </Box>
                         </Box>
                     </Box>

@@ -19,7 +19,7 @@ const EditIterenary = () => {
   const handleOpen = () => {
     setOpen(true);
     const timer = setTimeout(() => {
-      navigate('/tripprofile')
+      navigate('/profile')
     }, 2000);
     return () => clearTimeout(timer);
   }
@@ -39,7 +39,7 @@ const EditIterenary = () => {
       <Box>
         <Box sx={{display:"flex", alignItems:"center", width:'50%', textAlign:'left',ml:12, mb:4, mt:6}}>
             <Typography sx={{color:"#141820", fontSize:"24px", fontWeight: 600, lineHeight:"29.26px"}}>
-                Start your itineray adding your daily activities below.
+                Start your itinerary by adding your daily activities below.
             </Typography>
         </Box>
         <Box sx={{display:"flex", flexDirection:"row"}}>

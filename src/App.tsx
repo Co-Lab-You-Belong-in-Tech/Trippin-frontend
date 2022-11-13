@@ -5,6 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import IteranaryListComp from './component/componentStyle/IteranaryListComp';
 // import HeaderComponent from './component/HeaderComponent';
 import EditIterenary from './screen/EditIterenary';
 import Home from './screen/Home';
@@ -22,8 +23,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/newtrip" element={<NewTrip />} />
           <Route path='edit' element={<EditIterenary />}/>
-          <Route path='/tripprofile' element={<TripProfileList />} />
-          <Route path='/details/:id' element={<ItirenaryDetails />} />
+          <Route path='/profile' element={<TripProfileList />} />
+          <Route path='/edit/:id' element={<EditIterenary />} />
         </Routes>
       </BrowserRouter>
     </Box>   
