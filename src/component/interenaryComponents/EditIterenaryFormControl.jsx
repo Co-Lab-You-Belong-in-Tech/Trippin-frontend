@@ -47,9 +47,9 @@ const EditIterenaryFormControl = ({handleEditing, setEditing, createdTrip}) => {
     // const getNewTrip =  JSON.parse(localStorage.getItem("newtrip") || "")
 
     const handleAddMore = () => {
-        setDays([...days, days.length + 1])
+        setDays([...days, days.length + 1]);
         console.log(days);
-        setTripLocation([...tripLocation]);
+        setTripLocation([...tripLocation, ""]);
     }
 
 // google API code
