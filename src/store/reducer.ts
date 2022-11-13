@@ -12,7 +12,9 @@ const rootReducer = combineReducers({
     authLogin: authReducer.userLogin,
     authRegister: authReducer.userRegister,
     createNewTripRed: tripCombReducers.createTrip,
-    addTripPlanRed: addTripPlanReducer
+    addTripPlanRed: addTripPlanReducer,
+    tripPlanRed: tripCombReducers.tripPlanProf,
+    tripDetailsRed: tripCombReducers.tripDetails,
 });
 
 

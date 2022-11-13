@@ -14,6 +14,8 @@ type bannerType = {
 const EditBannerComponent = ({createdTrip}: bannerType) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const {data} = createdTrip;
+    console.log('from edit banner',createdTrip);
+    
   return (
         <Box sx={{height:'215px',backgroundImage:`url(${BannerImg})`, backgroundRepeat: "no-repeat",backgroundPosition: "center center",
             backgroundSize: "100% 100%"}}> 
@@ -28,7 +30,7 @@ const EditBannerComponent = ({createdTrip}: bannerType) => {
                     </Box>
                     <Box sx={{display:'flex', flelxDirection: "row",gap:2, alignItems:'center', position:"absolute", right: 50, top: 240}}>
                             <Box sx={{display:'flex', gap:1, alignItems:'center'}}>
-                                <Typography sx={{color:"#fff", fontSize:"24px", fontWeight:600}}>#{data.id}</Typography>
+                                <Typography sx={{color:"#fff", fontSize:"24px", fontWeight:600}}>#{data?.trip_code}</Typography>
                                
                                     <Tooltip title="Your trip id" enterDelay={500} leaveDelay={200} placement="top" arrow>
                                     <Box sx={{display:'flex', justifyContent:"center", alignItems:'center', width:'20px',    height:'20px', borderRadius:10, backgroundColor:"#fff"}}>

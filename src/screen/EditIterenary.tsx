@@ -1,4 +1,4 @@
-import React, { useRef, useState, RefObject } from 'react'
+import React, { useRef, useState, RefObject,useEffect } from 'react'
 import Box from '@mui/material/Box';
 import { Container, Typography } from '@mui/material';
 import EditHeader from '../component/interenaryComponents/EditHeader';
@@ -7,6 +7,7 @@ import EditInputController from '../component/interenaryComponents/EditInputCont
 import EditMapDisplay from '../component/interenaryComponents/EditMapDisplay';
 import TransitionsModal from '../component/commonComponents/ModalCoponent';
 import { BsNutFill } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
 
 
 const EditIterenary = () => {
@@ -14,11 +15,20 @@ const EditIterenary = () => {
   const [editing, setEditing] = React.useState(false);
   const show = true
   const createdTrip = JSON.parse(localStorage.getItem('newtrip') || "")
-  const handleOpen = () => setOpen(true);
+  const navigate = useNavigate()
+  const handleOpen = () => {
+    setOpen(true);
+    const timer = setTimeout(() => {
+      navigate('/tripprofile')
+    }, 2000);
+    return () => clearTimeout(timer);
+  }
   const handleEditing = () => {
     setEditing(true)
-    console.log('editing')
   }
+  // useEffect(() => {
+    
+  // }, []);
   return (
     <Box sx={{}}>
       {
