@@ -2,9 +2,6 @@ import React, { RefObject, useState,useRef,useEffect } from 'react'
 import dayjs, { Dayjs } from 'dayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { TimePicker } from '@mui/x-date-pickers/TimePicker';
-import { MobileTimePicker } from '@mui/x-date-pickers/MobileTimePicker';
-import { DesktopTimePicker } from '@mui/x-date-pickers/DesktopTimePicker';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
@@ -72,8 +69,6 @@ const EditIterenaryFormControl = ({handleEditing, setEditing, createdTrip}) => {
         e.preventDefault();
         dispatch(addTripPlan(tripLocation,startTime,endTime))
       }
-
-      console.log('the new trip',addNewTripPlan);
 
     //   handles list toggle
     const handleViewList = (i) => {

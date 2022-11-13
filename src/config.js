@@ -14,3 +14,5 @@ export const apiSignupUser = "/register";
 // API - Trip url
 export const apiNewTrip = "/trips";
 export const apiAddTripPlan = "/:id/itineraries";
+export const apiGetAllTrips = "/trips";
+export const apiGetSingleTrip = '/trips/:id/itineraries';

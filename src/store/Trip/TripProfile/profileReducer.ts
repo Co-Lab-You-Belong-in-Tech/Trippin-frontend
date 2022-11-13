@@ -1,8 +1,10 @@
 import * as actions from './actionType';
 
+
 const initialState = {
 loading: false,
-newTrip: ""
+error: "",
+allTrip: ""
 }
 
 interface actionInt{
@@ -10,20 +12,20 @@ interface actionInt{
     payload: any
 }
 
-export const newTripReducer = (state=initialState, action:actionInt) => {
+export const tripProfileReducder = (state=initialState, action:actionInt) => {
     switch (action.type) {
-        case actions.NEW_TRIP_START:
+        case actions.TRIP_PROFILE_START:
             return{
                 ...state,
                 loading: true,
             }
-        case actions.NEW_TRIP:
+        case actions.TRIP_PROFILE:
             return{
                 ...state,
                 loading: false,
-                newTrip: action.payload
+                allTrip: action.payload
             }
-        case actions.NEW_TRIP_FAILED:
+        case actions.TRIP_PROFILE_FAILED:
             return{
                 ...state,
                 laoding: false,

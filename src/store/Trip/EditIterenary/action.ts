@@ -37,14 +37,7 @@ export const addTripPlan = (location_name:string, itinerary_start_time:string,it
                 type: actions.EDIT_ITERENARY,
                 payload: {location_name, itinerary_start_time, itinerary_end_time,description, ratings,number_of_reviews,location_type}
             })
-        })
-        
-        
-
-    //    localStorage.setItem('itPlan', JSON.stringify(data));
-        
-
-       
+        })    
 
    } catch (error) {
     dispatch({
