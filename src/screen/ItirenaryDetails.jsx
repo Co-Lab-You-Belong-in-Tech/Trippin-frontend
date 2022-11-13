@@ -17,7 +17,7 @@ const ItirenaryDetails = () => {
     const dispatch = useDispatch()
     const createdTrip = JSON.parse(localStorage.getItem('newtrip') || "")
     const tripDetailsInfo = useSelector((state) => state.tripDetailsRed);
-    const {laoding, error, tripDetsInfo} = tripDetailsInfo
+    const {loading, error, tripDetsInfo} = tripDetailsInfo
 
     console.log('from the page', tripDetsInfo.data);
 

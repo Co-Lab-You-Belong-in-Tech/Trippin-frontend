@@ -59,7 +59,8 @@ const HeaderComponent = ({showIcon}: headerType) => {
                                                 SS
                                         </Box>
                                         <Typography sx={{color:"#141820", fontSize:"16px", fontWeight:"600", fontFamily:'Montserrat', lineHeight:"20px", mt:1, mb:0.5}}>Account email</Typography>
-                                        <Typography sx={{color:"#141820", fontSize:"18px", fontWeight:"400", fontFamily:'Montserrat', lineHeight:"20px", mt:0.5, mb:1}}>sarahsmith@gmail.com</Typography>
+                                                  <Typography sx={{ color: "#141820", fontSize: "18px", fontWeight: "400", fontFamily: 'Montserrat', lineHeight: "20px", mt: 0.5, mb: 1 }}
+                                                  >sarahsmith@gmail.com</Typography>
                                         <Typography sx={{color:"#141820", fontSize:"16px", fontWeight:"600", fontFamily:'Montserrat', lineHeight:"20px", mt:1, mb:0.5}}>Password</Typography>
                                         <Typography sx={{color:"#141820", fontSize:"18px", fontWeight:"400", fontFamily:'Montserrat', lineHeight:"20px", mt:0.5, mb:1}}>********</Typography>
                                         <Typography component="a" sx={{color:"#4A5568", fontSize:"16px", fontWeight:"600", fontFamily:'Montserrat', lineHeight:"20px", mt:1, mb:1, textDecoration:"none"}}>Change Password</Typography>

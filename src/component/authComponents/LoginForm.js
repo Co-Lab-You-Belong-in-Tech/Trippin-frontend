@@ -30,7 +30,7 @@ const LoginFormComp = () => {
    
     useEffect(() => {
         if(userInfo) {
-          navigate('/tripprofile')
+          navigate('/profile')
         }
       },[navigate, userInfo])
   return (
