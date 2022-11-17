@@ -31,7 +31,7 @@ const PlanNewTrip = () => {
                     mb: 3,
                     ml:2
                 }}>Plan a new trip</Box>
-                  <TripPlanningForm routeTo={'/edit'}/>
+                  <TripPlanningForm nextPage={'/edit'}/>
                 </Box>
             </Box>
             <Box sx={{width:'40%',backgroundImage:`url(${BackgroundImg})`, backgroundRepeat: "no-repeat",    backgroundPosition: "center center",

@@ -19,11 +19,12 @@ import Loader from '../UtilCOmponents/Loader';
 //   routeTo : string,
 // }
 
-const TripPlanningForm = ({routeTo}) => {
+const TripPlanningForm = ({nextPage}) => {
   const [tripName, setTripName] = useState("");
   const[destination, setDestination] = useState("");
   const [startDate, setStartdate] = useState("");
   const [endDate, setEnddate] = useState("");
+  const [created, setCreated] = useState(false)
 
 
   const dispatch = useDispatch();
@@ -63,17 +64,18 @@ const TripPlanningForm = ({routeTo}) => {
 
   const handeCreateTrip = (e) => {
     e.preventDefault();
-   
+    setCreated(true)
     dispatch(newTripAction(tripName, destination, startDate, endDate))
+    
   }
 
  
-
+  console.log(error, loading)
   useEffect(() => {
-    if(newTrip) {
-      navigate(routeTo)
+    if(created && error === undefined && loading === false) {
+      navigate(nextPage)
     }
-  },[navigate, newTrip, routeTo])
+  },[error, loading, navigate, nextPage, created])
   return (
     <>
         {
