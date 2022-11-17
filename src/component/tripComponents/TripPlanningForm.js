@@ -42,19 +42,32 @@ const TripPlanningForm = ({routeTo}) => {
 
   const {loading, error, newTrip} = newTripPlan
  
-
+ 
   let navigate = useNavigate();
 
   // useEffect(()=>{
   //   setDestination(destinationRef.current.value)
   // },[destination])
+  const handleSetDestPersist = (e) => {
+    e.stopPropagation();
+    if(destinationRef?.current.value === ""){
+      return
+    }
+    else{
+      setDestination(destinationRef?.current.value)
+    }
+    
+  }
+ 
+  console.log('the destination',destination);
 
   const handeCreateTrip = (e) => {
     e.preventDefault();
+   
     dispatch(newTripAction(tripName, destination, startDate, endDate))
   }
 
-  // console.log('my destination', destination);
+ 
 
   useEffect(() => {
     if(newTrip) {
@@ -82,7 +95,7 @@ const TripPlanningForm = ({routeTo}) => {
            </Box>
            <Box>
                 {
-                  isLoaded ? <Autocomplete onPlaceChanged={(place) => console.log('the place',place)}>
+                  isLoaded ? <Autocomplete >
                   
                   <TextInputField
                     id="location"
@@ -90,8 +103,9 @@ const TripPlanningForm = ({routeTo}) => {
                     inputHeight={40}
                     required
                     value={destination}
-                    // ref={destinationRef}
-                    onInput={(e) => setDestination(e.target.value)}
+                    ref={destinationRef}
+                    onChange={(e) => setDestination(e.target.value)}
+                    onBlur={(e) => handleSetDestPersist(e)}
                     // description="This is a description."
                     placeholder="Add location"
                   /> 

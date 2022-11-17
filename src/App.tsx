@@ -10,7 +10,7 @@ import IteranaryListComp from './component/componentStyle/IteranaryListComp';
 import EditIterenary from './screen/EditIterenary';
 import Home from './screen/Home';
 import ItirenaryDetails from './screen/ItirenaryDetails';
-import NewTrip from './screen/NewTrip';
+import PlanNewTrip from './screen/NewTrip';
 import TripProfileList from './screen/TripProfileList';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/newtrip" element={<NewTrip />} />
+          <Route path="/newtrip" element={<PlanNewTrip />} />
           <Route path='edit' element={<EditIterenary />}/>
           <Route path='/profile' element={<TripProfileList />} />
           <Route path='/edit/:id' element={<EditIterenary />} />

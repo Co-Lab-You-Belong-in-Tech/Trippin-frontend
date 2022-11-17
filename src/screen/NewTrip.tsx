@@ -16,7 +16,7 @@ interface itineraryItems {
   tripId: string,
   invites: string[]
 }
-const NewTrip = () => {
+const PlanNewTrip = () => {
   return (
     <>
        <HeaderComponent />
@@ -42,4 +42,4 @@ const NewTrip = () => {
     </>
   )
 }
-export default NewTrip
+export default PlanNewTrip
