@@ -45,13 +45,14 @@ const EditIterenaryFormControl = ({handleEditing, setEditing, createdTrip}) => {
    
 
     // const getNewTrip =  JSON.parse(localStorage.getItem("newtrip") || "")
+   
 
     const handleAddMore = () => {
         setDays([...days, days.length + 1]);
         console.log(days);
-        setTripLocation([...tripLocation, ""]);
+        setTripLocation([...tripLocation]);
     }
-
+   
 // google API code
     const {isLoaded} = useJsApiLoader({
         googleMapsApiKey: process.env.REACT_APP_MAP_API_KEY,
@@ -65,10 +66,8 @@ const EditIterenaryFormControl = ({handleEditing, setEditing, createdTrip}) => {
       let tripPlanFromLS = JSON.parse(localStorage.getItem('tripPlanSaved'))
       const dispatch = useDispatch()
       
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(addTripPlan(tripLocation,startTime,endTime))
-      }
+      
+      
 
     //   handles list toggle
     const handleViewList = (i) => {
@@ -83,12 +82,28 @@ const EditIterenaryFormControl = ({handleEditing, setEditing, createdTrip}) => {
         //check if the triplocation at that index and replace with e.target.value
         return arr.splice(i, 1, item)
     }
+    
     const handleInputValue = (i,e) => {
         e.preventDefault()
         // inputValue, setInputValue
         setTripLocation(e.target.value)   
     }
 
+    const handleSetDestPersist = (e) => {
+        e.stopPropagation();
+        if(inputRef?.current.value === ""){
+          return
+        }
+        else{
+            setTripLocation(inputRef?.current.value)
+        }
+        
+      }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(addTripPlan(tripLocation,startTime,endTime))
+      }
     // useEffect(()=> {
     //     if (document.activeElement === inputRef.current) {
     //         console.log('element has focus',inputRef.current);
@@ -119,7 +134,7 @@ const EditIterenaryFormControl = ({handleEditing, setEditing, createdTrip}) => {
                     
                         {
                             isLoaded ? <Autocomplete>
-                            <input placeholder='Add location' style={{outline:"none"}} ref={inputRef} value={tripLocation} onChange={(e) => handleInputValue(i,e)}/> 
+                            <input placeholder='Add location' style={{outline:"none"}} ref={inputRef} value={tripLocation} onChange={(e) => handleInputValue(i,e)} onBlur={(e) => handleSetDestPersist(e)}/> 
                         </Autocomplete> : <LinearProgress sx={{height: "10px", borderRadius:"10px", marginBottom: "20px"}}/>
                         } 
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
